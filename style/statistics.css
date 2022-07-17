@@ -85,38 +85,25 @@ body {
 }
 
 /*************************/
-/* FORM */
+/* TABLE */
 /*************************/
 
-.form-container {
-  margin-bottom: 6.4rem;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-
-.form-group label {
-  font-size: 1.8rem;
-  margin-bottom: 0.8rem;
-}
-
-.form-group input,
-.form-group select {
-  width: 200%;
-  padding: 1rem;
-  border-radius: 1rem;
-  background-color: #c6dbe6;
+th,
+td {
+  padding: 1rem 6rem;
   text-align: center;
 }
 
-.submit {
-  background-color: #ec6408 !important;
-  color: #0f1014;
+th {
+  color: #ec6408;
   font-size: 2rem;
+  font-weight: 600;
+  border-bottom: 1px solid #ec6408;
+}
+
+td {
+  color: #c6dbe6;
+  font-size: 1.8rem;
 }
 
 /*************************/

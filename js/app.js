@@ -1,7 +1,8 @@
 "use strict";
 
+let foodList = [];
+
 const formEl = document.getElementById("foodForm");
-const perentEl = document.getElementById("foodTable");
 
 let countID = 1000;
 function Food(name, type, price) {
@@ -9,6 +10,8 @@ function Food(name, type, price) {
   this.name = name;
   this.type = type;
   this.price = price;
+
+  foodList.push(this);
 }
 
 formEl.addEventListener("submit", handelSubmit);
@@ -19,19 +22,22 @@ function handelSubmit(event) {
   let name = event.target.foodName.value;
   let type = event.target.foodType.value;
   let price = event.target.foodPrice.value;
-  let food = new Food(name, type, price);
-  food.render();
+  new Food(name, type, price);
+
+  saveData();
 }
 
-Food.prototype.render = function () {
-  let trEl = document.createElement("tr");
+function saveData() {
+  localStorage.setItem("Foods", JSON.stringify(foodList));
+}
 
-  trEl.innerHTML = `
-    <td>${this.id}</td>
-    <td>${this.name}</td>
-    <td>${this.type}</td>
-    <td>$${this.price}</td>
-  `;
+function getData() {
+  let parsedData = JSON.parse(localStorage.getItem("Foods"));
 
-  perentEl.appendChild(trEl);
-};
+  if (parsedData) {
+    for (let i = 0; i < parsedData.length; i++) {
+      new Food(parsedData[i].name, parsedData[i].type, parsedData[i].price);
+    }
+  }
+}
+getData();
