@@ -106,6 +106,19 @@ td {
   font-size: 1.8rem;
 }
 
+.chart-container {
+  margin-top: 10rem;
+  display: flex;
+  gap: 25rem;
+  align-items: center;
+  color: #ec6408;
+}
+
+.chart {
+  max-width: 50rem;
+  width: 50rem;
+}
+
 /*************************/
 /* FOOTER */
 /*************************/
@@ -141,7 +154,12 @@ td {
 
 .link-lists {
   list-style: none;
-  padding-top: 10rem;
+  padding-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10rem;
 }
 
 .link-link {

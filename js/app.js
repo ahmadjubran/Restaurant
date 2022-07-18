@@ -27,6 +27,12 @@ function handelSubmit(event) {
   saveData();
 }
 
+let foodType = [];
+const options = document.getElementById("foodType").options;
+for (let i = 0; i < options.length; i++) {
+  foodType.push(options[i].value);
+}
+
 function saveData() {
   localStorage.setItem("Foods", JSON.stringify(foodList));
 }
