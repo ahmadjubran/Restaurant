@@ -12,6 +12,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style/statistics.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Restaurant</title>
   </head>
   <body>
@@ -37,10 +39,10 @@
 
     <main class="main">
       <section>
-        <table class="food-table">
+        <table class="food-table" data-sortable>
           <thead>
             <tr>
-              <th>Food ID</th>
+              <th data-sort-method="number">Food ID</th>
               <th>Food Name</th>
               <th>Food Type</th>
               <th>Food Price</th>
@@ -50,6 +52,16 @@
           <tbody id="foodTable"></tbody>
         </table>
       </section>
+
+      <div class="chart-container">
+        <div>
+          <canvas class="chart" id="foodTypeChart"></canvas>
+        </div>
+
+        <div>
+          <canvas class="chart" id="foodPriceChart"></canvas>
+        </div>
+      </div>
     </main>
 
     <footer class="footer grid grid--2-cols">

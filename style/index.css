@@ -154,7 +154,12 @@ body {
 
 .link-lists {
   list-style: none;
-  padding-top: 10rem;
+  padding-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10rem;
 }
 
 .link-link {
