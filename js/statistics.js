@@ -38,7 +38,17 @@ function getData() {
 
   if (parsedData) {
     for (let i = 0; i < parsedData.length; i++) {
-      new Food(parsedData[i].name, parsedData[i].type, parsedData[i].price);
+      let isExisist = false;
+
+      for (let j = 0; j < i; j++) {
+        if (j !== i && parsedData[j].name === parsedData[i].name) {
+          isExisist = true;
+        }
+      }
+
+      if (!isExisist) {
+        new Food(parsedData[i].name, parsedData[i].type, parsedData[i].price);
+      }
     }
   }
 
